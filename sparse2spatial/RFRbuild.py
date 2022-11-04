@@ -94,7 +94,7 @@ def build_or_get_models(df=None, testset='Test set (strat. 20%)',
             model = RandomForestRegressor(random_state=random_state,
                                           n_estimators=n_estimators,
                                           oob_score=oob_score,
-                                          criterion='mse')
+                                          criterion='squared_error')
             # Provide the model with the features (features_used) and
             # The labels ( target, train_set_tr_labels)
             model.fit(train_set_tr, train_set_tr_labels)
