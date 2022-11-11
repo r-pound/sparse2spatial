@@ -69,11 +69,11 @@ def mk_da_of_predicted_values(model=None, modelname=None, res='4x5',
     lon = dsA['lon'].values
     dates = dsA['time'].values
     # Loop and predict by month
-    months = np.arange(1, 13)
+    #months = np.arange(1, 13)
     da_l = []
-    for n_month, month in enumerate(months):
+    for n_month, month in enumerate(dates):
         # Select data for month
-        ds = dsA.sel(time=(dsA['time.month'] == month))
+        ds = dsA.sel(time=(dsA['time'] == month))#'time.month
         # Remove time (all values have only 1 time (confirm with asssert)
         assert len(ds.time) == 1, 'Only 1 time should be selected!'
         ds = ds.mean(dim='time')
