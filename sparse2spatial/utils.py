@@ -87,7 +87,7 @@ def mk_da_of_predicted_values(model=None, modelname=None, res='4x5',
             # Construct Series by unstacking
             df[fvar] = df_tmp.unstack()
         # Now predict values with feature variables
-        df[target] = model.predict(df[features_used].values)
+        df[target] = model.predict(df[features_used])#.values) pass dataframe with name to remove warning message?
         # Now re-build into a 3D dataset
         df = df[target].unstack()
         # Extract array to be included in dataset

@@ -138,7 +138,7 @@ def build_or_get_models(df=None, testset='Test set (strat. 20%)',
         else:
             model = models_dict[model_name]
         # Predict target for all observation locations
-        df[model_name] = model.predict(df[features_used].values)
+        df[model_name] = model.predict(df[features_used])#.values) - pass with names to remove warnings?
         # Save number of features used too
         N_features_used[model_name] = len(features_used)
         features_used_dict[model_name] = '+'.join(features_used)
