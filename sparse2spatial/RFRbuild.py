@@ -997,7 +997,7 @@ def mk_predictions_for_3D_features(dsA=None, RFR_dict=None, res='4x5',
         features_used = features_used_dict[modelname]#utils.get_model_features_used_dict(modelname)
         # Make a DataSet of predicted values
         ds_tmp = utils.mk_da_of_predicted_values(dsA=dsA, model=model, res=res,
-                                                 modelname=modelname,
+                                                 modelname=modelname,target=target,
                                                  features_used=features_used)
         #  Add attributes to the prediction
         ds_tmp = utils.add_attrs2target_ds(ds_tmp, add_global_attrs=False,
