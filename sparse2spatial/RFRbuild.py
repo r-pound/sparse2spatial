@@ -1033,6 +1033,6 @@ def mk_predictions_for_3D_features(dsA=None, RFR_dict=None, res='4x5',
     # Save to NetCDF
     if save2NetCDF:
         filename = 's2s_predicted_{}_{}{}.nc'.format(target, res, xsave_str)
-        ds.to_netcdf(filename)
+        ds.to_netcdf(folder+filename)
     else:
         return ds
